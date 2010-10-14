@@ -36,7 +36,7 @@ update_state (GtkWidget *window)
         count++;
 
         switch (count) {
-        case 1:
+/*        case 1:
                 gsd_media_keys_window_set_volume_level (GSD_MEDIA_KEYS_WINDOW (window),
                                                         10);
                 gsd_media_keys_window_set_action (GSD_MEDIA_KEYS_WINDOW (window),
@@ -74,7 +74,7 @@ update_state (GtkWidget *window)
 
                 gtk_widget_show (window);
                 break;
-/*      case 1:
+*/      case 1:
                 gsd_media_keys_window_set_action (GSD_MEDIA_KEYS_WINDOW (window),
                                                   GSD_MEDIA_KEYS_WINDOW_ACTION_3G_ON);
 
@@ -121,24 +121,24 @@ update_state (GtkWidget *window)
 static void
 test_window (void)
 {
-        GtkWidget *window;
+	GtkWidget *window;
 
-        window = gsd_media_keys_window_new ();
-        //gtk_widget_set_app_paintable (window, TRUE);
+	window = gsd_media_keys_window_new ();
+	//gtk_widget_set_app_paintable (window, TRUE);
+	/*
+	   gtk_window_set_position (GTK_WINDOW (window), GTK_WIN_POS_CENTER_ALWAYS);
 
-gtk_window_set_position (GTK_WINDOW (window), GTK_WIN_POS_CENTER_ALWAYS);
+	   gsd_media_keys_window_set_volume_level (GSD_MEDIA_KEYS_WINDOW (window),
+	   0);
 
-        gsd_media_keys_window_set_volume_level (GSD_MEDIA_KEYS_WINDOW (window),
-                                                0);
-        
-        gsd_media_keys_window_set_action (GSD_MEDIA_KEYS_WINDOW (window),
-                                          GSD_MEDIA_KEYS_WINDOW_ACTION_VOLUME);
-/*
-        gsd_media_keys_window_set_action (GSD_MEDIA_KEYS_WINDOW (window),
-                                          GSD_MEDIA_KEYS_WINDOW_ACTION_WIFI_ON);
-*/        gtk_widget_show_all (window);
+	   gsd_media_keys_window_set_action (GSD_MEDIA_KEYS_WINDOW (window),
+	   GSD_MEDIA_KEYS_WINDOW_ACTION_VOLUME);
+	 */
+	gsd_media_keys_window_set_action (GSD_MEDIA_KEYS_WINDOW (window),
+			GSD_MEDIA_KEYS_WINDOW_ACTION_WIFI_ON);
+	gtk_widget_show_all (window);
 
-        g_timeout_add (1200, (GSourceFunc) update_state, window);
+	g_timeout_add (1200, (GSourceFunc) update_state, window);
 }
 
 int
