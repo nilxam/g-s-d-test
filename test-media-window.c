@@ -110,7 +110,7 @@ update_state (GtkWidget *window)
 
                 //gtk_widget_show (window);
                 break;
-*/        default:
+        default:
                 gtk_main_quit ();
                 break;
         }
